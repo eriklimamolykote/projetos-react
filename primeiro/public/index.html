@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+
+    <!-- <h1>Function</h1>
+
+      <p>This demonstrates a regular function, NOT an arrow function.</p>
+
+      <p id="demo"></p>
+
+      <br>
+
+      <h1>Arrow Function</h1>
+
+      <p>A demonstration of a simple arrow function.</p>
+
+      <p id="arrowfunction"></p>
+
+      <br>
+
+      <h2>Implicit Return</h2>
+
+      <p>The arrow function expects a return value, and 
+        returns the value by default, without the 
+        <strong>return</strong> keyword.</p>
+
+      <p id="implicitreturn"></p>
+
+      <br>
+
+      <p>A demonstration of an arrow function in one
+        line, with parameters.</p>
+
+      <p id="functionparameter"></p>
+      
+      <br>
+
+      <p>As you can see in this example, you can skip 
+        the parentheses when you have only one 
+        parameter.</p>
+
+      <p id="withoutparentheses"></p>
+      
+      <script>
+        hello = function() {
+          return "Hello World!";
+        }
+
+        implicitReturn = () => "Hello World!";
+
+        functionParameter = (val) => "Hello " + val;
+        
+        withoutParentheses = val => "Hello " + val;
+
+        document.getElementById("demo").innerHTML = hello();
+        document.getElementById("arrowfunction").innerHTML = hello();
+        document.getElementById("implicitreturn").innerHTML = implicitReturn();
+        document.getElementById("functionparameter").innerHTML = functionParameter("World");
+        document.getElementById("withoutparentheses").innerHTML = withoutParentheses("World!!");
+      </script> -->
+
+      <h1>Regular Function</h1>
+
+      <p>The <strong>this</strong> keyword represents 
+        different objects depending on how the function 
+      was called.</p>
+
+      <button id="btn">Click Me!</button>
+
+      <p><strong>this</strong> represents:</p>
+
+      <p id="demo"></p>
+
+      <p>See the difference before and after the 
+        button is clicked.</p>
+
+      <br>
+      
+      <h1>Arrow Function</h1>
+
+      <p>The <strong>this</strong> keyword represents 
+        the Header object.</p>
+
+      <button id="btn">Click Me!</button>
+      
+      <p><strong>this</strong> represents:</p>
+
+      <p id="arrowdemo"></p>
+
+      <script>
+        class Header {
+          constructor() {
+            this.color = "Red";
+          }
+
+          changeColor = function() {
+            document.getElementById("demo").innerHTML += this;
+            document.getElementById("arrowdemo").innerHTML += this;
+          }
+        }
+
+        const myheader = new Header();
+        const myarrow = new Header();
+
+        // The window object calls the function:
+        window.addEventListener("load", myheader.changeColor);
+
+        // A button object call the function:
+        document.getElementById("btn").addEventListener("click", myheader.changeColor);
+        document.getElementById("btn").addEventListener("click", myarrow.changeColor);
+      </script>  
+
+  </body>
+</html>
