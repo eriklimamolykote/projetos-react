@@ -1,0 +1,16 @@
+* {
+  background: rgb(70, 70, 70);
+  font-family: sans-serif;
+}
+
+button {
+  color: rgb(255, 255, 255);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  background: rgb(148, 145, 0);
+  color: rgb(255, 255, 255);
+  width: fit-content;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
+}
